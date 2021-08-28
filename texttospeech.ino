@@ -42,7 +42,7 @@ void BTN_press(){
       delete statement;
       statement = new PreparedStatement();
       statement->addTTS("Hello world. This is my first program.", ttsUrl, ttsCert);
-      statement->prepare(speechPlay);
+      statement->prepareWAV(speechPlay);
     }
   }
 
