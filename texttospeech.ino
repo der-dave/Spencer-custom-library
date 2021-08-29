@@ -29,7 +29,6 @@ void speechPlay(TTSError error, CompositeAudioFileSource* source){
   });
   delete statement;
   statement = nullptr;
-
 }
 
 void BTN_press(){
@@ -45,7 +44,6 @@ void BTN_press(){
       statement->prepareWAV(speechPlay);
     }
   }
-
 }
 
 
@@ -67,12 +65,8 @@ void setup() {
     }
 
   });
-
-
 }
 
 void loop() {
   LoopManager::loop();
-
-
 }
