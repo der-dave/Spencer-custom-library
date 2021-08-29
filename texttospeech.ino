@@ -7,8 +7,8 @@ PreparedStatement* statement = nullptr;
 bool synthesizing = false;
 
 // text to speech (TTS) server address and certificate
-const char* ttsUrl = "http://192.168.1.35:5500/api/tts?voice=nanotts%3Ade-DE";    // custom address used for TTS
-const char* ttsCert = "false";                                                    // "" -> use default CircuitMess certificate; "false" -> dont use a certificate; "xx:xx:xx ..." -> use custom certificate
+const char* ttsUrl = "http://xxx.xxx.xxx.xxx:xxxxx/api/tts?voice=nanotts%3Ade-DE";    // custom address used for TTS
+const char* ttsCert = "false";                                                        // "" -> use default CircuitMess certificate; "false" -> dont use a certificate; "xx:xx:xx ..." -> use custom certificate
 
 void speechPlay(TTSError error, CompositeAudioFileSource* source){
   synthesizing = false;
@@ -22,7 +22,7 @@ void speechPlay(TTSError error, CompositeAudioFileSource* source){
     return;
   }
   LEDmatrix.startAnimation(new Animation(new SerialFlashFileAdapter("GIF-talk.gif")), true);
-  Playback.playMP3(source);
+  Playback.playWAV(source);
   Playback.setPlaybackDoneCallback([](){
     LEDmatrix.startAnimation(new Animation(new SerialFlashFileAdapter("GIF-wink.gif")), true);
 
