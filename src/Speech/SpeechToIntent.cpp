@@ -58,11 +58,7 @@ IntentResult* SpeechToIntentImpl::identifyVoice(const char* filename, const char
 	StreamableHTTPClient http;
 	http.useHTTP10(true);
 	http.setReuse(false);
-	//----------------------- ORIG ----------------------
-	//if(!http.begin("https://spencer.circuitmess.com:8443/sti/speech", CA)){
-	//	return new IntentResult(IntentResult::NETWORK);
-	//}
-	//----------------------- ORIG end-------------------
+
 	if (!address || address == "") {
 		// use default CircuitMess server
 		if (!http.begin("https://spencer.circuitmess.com:8443/sti/speech", CA)) {
